@@ -53,9 +53,9 @@ Head::Head(const std::vector<int> &matric, int m, int n)
 	}
 }
 
-Head::Head(const std::vector<nonzeroposition> &matric, int m, int n)
+Head::Head(const std::vector<nonZeroPosition> &matric, int m, int n)
 {
-	std::vector<nonzeroposition>::const_iterator it;
+	std::vector<nonZeroPosition>::const_iterator it;
 
 	for (int ii = 0; ii < n; ii++)
 	{
@@ -274,7 +274,7 @@ int findmincol(Head &head, HeadofColumn* &minhead)
 	return minunit;
 }
 
-std::ostream &operator<<(std::ostream &ostream, const nonzeroposition &nzp)
+std::ostream &operator<<(std::ostream &ostream, const nonZeroPosition &nzp)
 {
 	return ostream << "(" <<nzp.row << ", " << nzp.column << ") ";
 }

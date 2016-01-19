@@ -27,24 +27,6 @@
     <ClInclude Include="sudotoexacov.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Head.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="HeadofColumn.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="HeadofRow.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Node.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="other.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Unit.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -54,24 +36,6 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="sudotoexacov.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Head.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="HeadofColumn.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="HeadofRow.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Node.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="other.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Unit.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

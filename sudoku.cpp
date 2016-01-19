@@ -3,8 +3,6 @@
 
 #include "stdafx.h"
 
-bool debug = false;
-
 int _tmain(int argc, _TCHAR* argv[])
 {
 	int su[81] = { 0 };/*{ 3, 0, 2, 0, 0, 0, 9, 0, 0,
@@ -16,7 +14,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		0, 9, 0, 6, 4, 0, 0, 0, 5,
 		0, 0, 0, 1, 0, 3, 0, 0, 0,
 		0, 0, 1, 0, 0, 0, 4, 0, 3, };*/
-	std::vector<nonzeroposition> exa;
+	std::vector<nonZeroPosition> exa;
 	std::vector<int> res;
 	std::vector<element> index;
 	Head *dl = nullptr;
@@ -32,8 +30,6 @@ int _tmain(int argc, _TCHAR* argv[])
 			printtime = true;
 		if (_tcscmp(argv[ii], _TEXT("-a")) == 0)
 			aut = true;
-		if (_tcscmp(argv[ii], _TEXT("-d")) == 0)
-			debug = true;
 	}
 
 	if (!aut)
@@ -50,8 +46,7 @@ int _tmain(int argc, _TCHAR* argv[])
 			ii--;
 	}
 
-	if (debug)
-	{
+#ifdef _DEBUG_MODE
 		std::cout << "The input matrix is:" << std::endl;
 		for (ii = 0; ii < 9; ii++)
 		{
@@ -60,12 +55,10 @@ int _tmain(int argc, _TCHAR* argv[])
 			std::cout << std::endl;
 		}
 		std::cout << std::endl;
-	}
-
+#endif
 	exarownum = convert(su, exa, index);
 
-	if (debug)
-	{
+#ifdef _DEBUG_MODE
 		std::cout << "The exactcover problem is:" << std::endl;
 		for (ii = 0; ii < exarownum; ii++)
 		{
@@ -82,18 +75,19 @@ int _tmain(int argc, _TCHAR* argv[])
 				std::cout << std::endl;
 		}
 		std::cout << std::endl << std::endl << "Begain to solve exactcover:" << std::endl;
-	}
+#endif
 
 	dl = new Head(exa, exarownum, 324);
-	solveexactcover(*dl, res);
+	SolveExactCover(*dl, res);
 	delete dl;
 
 	if (res.at(0) != 0)
 	{
 		for (ii = 0; ii < 81; ii++)
 			solvedsudoku[index.at(res.at(ii) - 1).position - 1] = index.at(res.at(ii) - 1).number;
-
-		if (!aut || debug)
+#ifndef _DEBUG_MODE
+		if (!aut)
+#endif
 			std::cout << std::endl << "The result is:" << std::endl;
 		for (ii = 0; ii < 9; ii++)
 		{
@@ -103,7 +97,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		}
 	}
 	else
-		std::cout << "There is no solution." << std::endl;
+		std::cout << 0 << std::endl << "There is no solution." << std::endl;
 
 	if (!aut)
 		system("Pause");

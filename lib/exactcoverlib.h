@@ -1,33 +1,23 @@
-#ifndef HEAD_H
-#define HEAD_H
+// stdafx.h : 标准系统包含文件的包含文件，
+// 或是经常使用但不常更改的
+// 特定于项目的包含文件
+//
 
-class nonZeroPosition
-{
-public:
-	int row;
-	int column;
-	bool operator < (const nonZeroPosition& ele1);
-};
+#pragma once
 
-class Head :public Node
-{
-private:
-	int __totalColumn;
+#define WIN32_LEAN_AND_MEAN             //  从 Windows 头文件中排除极少使用的信息
 
-	//creat HeadofColumn object and add it into link, return the total number of column after add
-	int _CreatColumnHead();
-	//creat Unit object and add it into link, (column, row) are its position, return 0
-	int _CreatUnit(int row, int column);
 
-public:
-//	Head();
-	Head(int matrix[],int m, int n);
-	Head(const std::vector<int> &matric, int m, int n);
-	Head(std::vector<nonZeroPosition> &matric, int m, int n);
-	~Head();
 
-	friend int __declspec(dllexport) SolveExactCover(Head &head, std::vector<int> &res);
-	friend int FindMinColumn(Head &head, HeadofColumn* &minHead);
-};
+// TODO:  在此处引用程序需要的其他头文件
 
-#endif
+#include <stdexcept>
+#include <vector>
+#include <algorithm>
+
+#include "Node.h"
+#include "HeadofColumn.h"
+#include "Unit.h"
+#include "Head.h"
+
+//#define _DEBUG_MODE

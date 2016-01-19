@@ -5,10 +5,10 @@ std::ostream &operator<<(std::ostream &ostream, const element &ele)
 	return ostream << "(" << ele.position << ", " << ele.number << ") ";
 }
 
-int addrow(const int position, const int num, const int linkrow, std::vector<nonzeroposition> &vec, std::vector<element> &index)
+int addrow(const int position, const int num, const int linkrow, std::vector<nonZeroPosition> &vec, std::vector<element> &index)
 {
 	int row, col, uni;
-	nonzeroposition node;
+	nonZeroPosition node;
 	element ele;
 
 	row = (position - 1) / 9 + 1;
@@ -42,7 +42,7 @@ int addrow(const int position, const int num, const int linkrow, std::vector<non
 	return 0;
 }
 
-int convert(int matric[], std::vector<nonzeroposition> &exa, std::vector<element> &index)
+int convert(int matric[], std::vector<nonZeroPosition> &exa, std::vector<element> &index)
 {
 	int linkrow = 0;
 

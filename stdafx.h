@@ -15,10 +15,7 @@
 
 
 // TODO:  在此处引用程序需要的其他头文件
-#include "Node.h"
-#include "HeadofColumn.h"
-#include "HeadofRow.h"
-#include "Unit.h"
-#include "Head.h"
-#include "other.h"
+#include "lib\ExactCoverlib.h"
 #include "sudotoexacov.h"
+
+//#define _DEBUG_MODE

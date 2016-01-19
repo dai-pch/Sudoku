@@ -41,6 +41,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Users\dpc\Documents\cpp\sudoku - 2.0\sudoku\lib;$(ProjectDir)\lib;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -56,6 +57,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>.\lib\exactcoverlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -79,29 +81,17 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Head.h" />
-    <ClInclude Include="HeadofColumn.h" />
-    <ClInclude Include="HeadofRow.h" />
-    <ClInclude Include="Node.h" />
-    <ClInclude Include="other.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="sudotoexacov.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="Unit.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Head.cpp" />
-    <ClCompile Include="HeadofColumn.cpp" />
-    <ClCompile Include="HeadofRow.cpp" />
-    <ClCompile Include="Node.cpp" />
-    <ClCompile Include="other.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="sudoku.cpp" />
     <ClCompile Include="sudotoexacov.cpp" />
-    <ClCompile Include="Unit.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
