@@ -78,10 +78,10 @@ int _tmain(int argc, _TCHAR* argv[])
 #endif
 
 	dl = new Head(exa, exarownum, 324);
-	SolveExactCover(*dl, res);
+	temp = SolveExactCover(*dl, res);
 	delete dl;
 
-	if (res.at(0) != 0)
+	if (temp == 1)
 	{
 		for (ii = 0; ii < 81; ii++)
 			solvedsudoku[index.at(res.at(ii) - 1).position - 1] = index.at(res.at(ii) - 1).number;

@@ -18,4 +18,6 @@
 #include "lib\ExactCoverlib.h"
 #include "sudotoexacov.h"
 
+#pragma comment (lib, "exactcoverlib.lib")
+
 //#define _DEBUG_MODE
